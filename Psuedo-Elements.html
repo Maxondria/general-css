@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .required::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        display: block;
+      }
+      .required::after {
+        content: "*";
+      }
+
+      [data-tooltip] {
+        position: relative;
+      }
+
+      [data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: 100%; /*Because we want it at the bottom of the element with position 'relative'*/
+        /* Make it stretch the entire width of the element with position 'relative' by setting right
+        and left to 0 */
+        left: 0;
+        right: 0;
+        margin-top: 5px;
+        padding: 5px;
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="name" class="required">Name</label>
+    <input type="text" required />
+    <button data-tooltip="Tooltip">Submit Form</button>
+  </body>
+</html>
+
+<!-- Notes
+- Pseudo elements only work for elements which have content. Eg.
+  <label>::before Name ::after</label> - Which means they can't work for say '<input type="text"/>'
+  because 'inputs' don't have content. 
+- Note that each element can only and only have one 'before' and 'after' -->
