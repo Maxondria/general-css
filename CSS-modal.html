@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      .modal {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+      }
+
+      .modal__content {
+        width: 75%;
+        height: 65%;
+        background-color: white;
+        position: relative;
+        padding: 2rem;
+        border-radius: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+      }
+
+      a:link,
+      a:visited {
+        text-decoration: none;
+      }
+
+      .modal__close {
+        color: #363636;
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+      }
+
+      .modal__heading {
+        color: dodgerblue;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .modal__paragraph {
+        line-height: 1.5rem;
+      }
+
+      .model-open {
+        display: inline-block;
+        color: dodgerblue;
+        margin: 2rem;
+      }
+
+      /*Targeted in the URL*/
+      #model-open:target {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      #model-open:target .modal__content {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#model-open" class="model-open">Open Modal</a>
+
+    <div class="modal" id="model-open">
+      <div class="modal__content">
+        <a href="#" class="modal__close">&times;</a>
+        <h2 class="modal__heading">Max BigBudget</h2>
+        <p class="modal__paragraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia natus
+          fugiat incidunt eum repudiandae nulla enim exercitationem, ullam quos
+          reprehenderit nam, obcaecati cupiditate quisquam similique omnis iusto
+          facere, architecto pariatur! Incidunt ipsam laboriosam, accusamus sunt
+          magni iure nihil, deleniti dicta modi distinctio earum? Veniam
+          nesciunt necessitatibus temporibus, omnis modi doloribus culpa
+          deleniti aperiam blanditiis. Mollitia vero saepe aliquid nisi ratione.
+          Animi eligendi nulla cum quam iusto voluptatem sequi nobis quibusdam.
+          Impedit obcaecati iure cupiditate vero eligendi! Sequi suscipit velit
+          officia vitae molestiae magni, veritatis vel. Doloribus dolorum ut
+          esse voluptas. Dignissimos doloremque delectus, quod sed harum
+          molestiae ex obcaecati nemo commodi numquam labore aliquid
+          voluptatibus alias eos eius accusamus porro quis blanditiis! Magnam
+          numquam magni ipsum officia, velit incidunt odit. Quasi voluptate non
+          rem distinctio doloremque debitis iusto tempora animi nihil
+          perferendis fuga fugiat ratione deleniti mollitia ab, numquam quaerat
+          tenetur labore qui, placeat eaque sapiente similique? Corporis,
+          exercitationem quia?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
